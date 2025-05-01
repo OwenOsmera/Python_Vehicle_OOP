@@ -51,10 +51,42 @@ def main():
         choice = U.get_int("Please enter your choice: ")
         print("")
 
-        if choice == 1:
+        if choice == 115:
+            # Display the easter egg menu
+            print("You have entered the easter egg menu!")
+            while True:
+                print("")
+                created_bike.easter_egg_menu()
+                # Get the user choice
+                easter_egg_choice = U.get_int("Please enter your choice: ")
+                print("")
+
+                if easter_egg_choice == 1:
+                    # Display the admin speed change
+                    speed_value = U.get_int("Please enter the new admin speed: ")
+                    created_bike.change_admin_speed(speed_value)
+                elif easter_egg_choice == 2:
+                    # Display the admin menu title changer
+                    title_color = input("Please enter the new for main menu title color: ")
+                    created_bike.change_menu_title_color(title_color)
+
+                elif easter_egg_choice == 3:
+                    # Display the admin Rider menu
+                    title_color = input("Please enter the new for rider menu title color: ")
+                    created_bike.change_menu_rider_title_color(title_color)
+                else:
+                    # Exit the program
+                    print("Exiting the EGG MENU...")
+                    break
+                
+
+        elif choice == 1:
             # Display the bike information menu
             while True:
                 created_bike.bike_rider_menu()
+
+                # This helps the code decide if the Bike need to stop before quiting
+                speed_value = created_bike.get_speed()
                 
 
                 # Get the user choice
@@ -72,7 +104,12 @@ def main():
                     # bring the bike to a stop
                     created_bike.stop()
                 else:
-                    created_bike.stop()
+                    # This assures that the speed of the bike is always 0 before exiting the menu
+                    # This is also a nice way to make sure that the bikes speed when staring the driving minigame is 0
+                    if speed_value > 0:
+                        created_bike.stop()
+
+
                     print("Exiting the bike rider menu...")
                     print("")
                     # Slows down the bike and exits the bike menu
@@ -96,6 +133,9 @@ def main():
         elif choice == 3:
             # Display the bike information
             created_bike.display()
+
+            # Check to see if the user is lucky
+            created_bike.easter_egg_hint()
 
         else:
             # Exit the program
