@@ -30,11 +30,19 @@ class HondaGrom:
         self._speed = 0
         self.console = Console()
 
+        # Just the fake loading screen for the Grom
         print("Creating a new Grom...")
         time.sleep(2)
-
         print("Grom created!")
-        self.display() 
+
+        # This just creates space in the out put
+        print("")
+
+
+        # Display the Grom information
+        self.display()
+
+        
 
     # TODO make a change speed method for the Grom
     def accelerate(self):

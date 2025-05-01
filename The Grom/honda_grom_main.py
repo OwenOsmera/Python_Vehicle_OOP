@@ -25,6 +25,9 @@ def main():
         "price": U.get_float("What is the price of your bike? "),
     }
 
+    # This print just makes space in the console
+    print("")
+
     # TODO use those values to make a user bike class
     created_bike = HG.HondaGrom(
         user_bike["color"],
