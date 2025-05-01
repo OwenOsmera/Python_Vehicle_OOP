@@ -106,7 +106,7 @@ class HondaGrom:
         print("Selling old Grom...")
         time.sleep(1)
         print("Old Grom sold!")
-        print(f"You made {self.price} from the sale!")
+        print(f"You made ${self.price} from the sale!")
         time.sleep(1)
         print("Preparing the new Grom...")
         time.sleep(1)
